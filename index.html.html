@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="JMS FiberNet - Fast, reliable fiber internet for home and business in Ghaziabad, Noida and Greater Noida.">
+<title>JMS FiberNet | Fast Fiber Internet</title>
+<style>
+:root{--primary:#e53935;--dark:#101828;--text:#344054;--light:#f8fafc;--white:#fff;--green:#16a34a;--orange:#ff7a00}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,Arial,sans-serif;color:var(--text);background:#fff;line-height:1.6}
+a{text-decoration:none;color:inherit}
+.container{width:min(1120px,92%);margin:auto}
+header{position:sticky;top:0;z-index:1000;background:#fff;border-bottom:1px solid #eaecf0}
+.nav{height:72px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:25px;font-weight:900;color:var(--primary)} .logo span{color:#111827}
+nav{display:flex;gap:26px;align-items:center} nav a{font-weight:700;font-size:14px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 19px;border-radius:10px;font-weight:800;border:0;cursor:pointer}
+.btn-primary{background:var(--primary);color:#fff}.btn-dark{background:var(--dark);color:#fff}.btn-green{background:var(--green);color:#fff}.btn-outline{border:1px solid #d0d5dd;background:#fff}
+.hero{background:linear-gradient(135deg,#fff5f5,#fff 48%,#f4f8ff);padding:85px 0 70px}
+.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:55px;align-items:center}
+.badge{display:inline-block;padding:7px 12px;border-radius:999px;background:#fee4e2;color:#b42318;font-weight:800;font-size:13px;margin-bottom:17px}
+h1{font-size:clamp(40px,6vw,68px);line-height:1.02;color:var(--dark);letter-spacing:-2px;margin-bottom:20px}
+h1 span{color:var(--primary)}
+.hero p{font-size:18px;max-width:610px;margin-bottom:28px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.hero-card{background:#101828;color:#fff;border-radius:25px;padding:30px;box-shadow:0 25px 60px #10182825}
+.speed{font-size:60px;font-weight:900;line-height:1;color:#fff}.speed small{font-size:24px}
+.hero-card .line{height:1px;background:#ffffff20;margin:22px 0}
+.stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.stat{background:#ffffff12;padding:15px;border-radius:12px}.stat b{font-size:22px;display:block}
+section{padding:78px 0}.section-head{text-align:center;max-width:700px;margin:0 auto 42px}.section-head h2{font-size:38px;color:var(--dark);margin-bottom:10px}.section-head p{color:#667085}
+.plans{background:var(--light)} .plan-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.plan{background:#fff;border:1px solid #eaecf0;border-radius:18px;padding:28px;position:relative;box-shadow:0 8px 30px #1018280a}
+.plan.popular{border:2px solid var(--primary);transform:translateY(-8px)}
+.pop{position:absolute;right:18px;top:16px;background:var(--primary);color:#fff;border-radius:20px;padding:5px 10px;font-size:11px;font-weight:800}
+.plan h3{font-size:21px;color:var(--dark)} .plan .mbps{font-size:38px;font-weight:900;color:var(--primary);margin:12px 0}
+.price{font-size:30px;font-weight:900;color:var(--dark)} .price small{font-size:13px;color:#667085}
+.plan ul{list-style:none;margin:18px 0}.plan li{padding:8px 0;border-bottom:1px solid #f2f4f7;font-size:14px}
+.plan li:before{content:"✓";color:var(--green);font-weight:900;margin-right:9px}
+.plan .btn{width:100%;margin-top:5px}
+.services{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.service{padding:25px;border:1px solid #eaecf0;border-radius:17px;background:#fff}.icon{font-size:32px;margin-bottom:10px}.service h3{color:var(--dark);margin-bottom:6px}
+.coverage{background:#101828;color:#fff}.coverage-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}.coverage h2{font-size:40px}.coverage p{color:#d0d5dd;margin:14px 0 24px}.areas{display:flex;flex-wrap:wrap;gap:10px}.areas span{border:1px solid #ffffff25;padding:9px 13px;border-radius:999px;background:#ffffff0c}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}.about-box{background:#f8fafc;padding:35px;border-radius:22px}.checks{list-style:none;margin-top:18px}.checks li{margin:10px 0}.checks li:before{content:"✓";color:var(--green);font-weight:900;margin-right:10px}
+.contact{background:#f8fafc}.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}.contact-card{background:#fff;border:1px solid #eaecf0;border-radius:18px;padding:30px}.contact-card h3{color:var(--dark);margin-bottom:15px}.contact-item{padding:12px 0;border-bottom:1px solid #f2f4f7}
+footer{background:#0b1220;color:#cbd5e1;padding:35px 0}.footer{display:flex;justify-content:space-between;gap:20px;align-items:center}.footer strong{color:#fff;font-size:20px}
+.float{position:fixed;right:20px;bottom:20px;z-index:999;box-shadow:0 10px 30px #0003}
+.mobile-menu{display:none}
+@media(max-width:850px){
+ nav{display:none}.mobile-menu{display:block}.hero-grid,.coverage-grid,.about-grid,.contact-grid{grid-template-columns:1fr}.plan-grid{grid-template-columns:1fr}.services{grid-template-columns:1fr 1fr}.hero{padding-top:55px}.plan.popular{transform:none}
+}
+@media(max-width:520px){.services{grid-template-columns:1fr}.stat-grid{grid-template-columns:1fr}.footer{flex-direction:column;text-align:center}section{padding:58px 0}}
+</style>
+</head>
+<body>
+
+<header>
+ <div class="container nav">
+  <a class="logo" href="#home">JMS <span>FiberNet</span></a>
+  <nav>
+   <a href="#home">Home</a><a href="#plans">Plans</a><a href="#services">Services</a><a href="#about">About</a><a href="#coverage">Coverage</a><a href="#contact">Contact</a>
+  </nav>
+  <div class="mobile-menu">☰</div>
+ </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+ <div class="container hero-grid">
+  <div>
+   <div class="badge">🚀 Fast • Reliable • Fiber Internet</div>
+   <h1>Internet that keeps your <span>world connected.</span></h1>
+   <p>JMS FiberNet delivers high-speed fiber internet for homes, offices and businesses with dependable support in Ghaziabad, Noida and nearby areas.</p>
+   <div class="cta">
+    <a class="btn btn-primary" href="#plans">View Plans →</a>
+    <a class="btn btn-green" href="https://wa.me/919315249487?text=Hello%20JMS%20FiberNet%2C%20I%20want%20a%20new%20internet%20connection." target="_blank">WhatsApp Us</a>
+   </div>
+  </div>
+  <div class="hero-card">
+   <div style="font-size:14px;color:#98a2b3">UP TO</div>
+   <div class="speed">300 <small>Mbps</small></div>
+   <div class="line"></div>
+   <div class="stat-grid"><div class="stat"><b>24×7</b><small>Support</small></div><div class="stat"><b>Fiber</b><small>Technology</small></div><div class="stat"><b>Fast</b><small>Response</small></div></div>
+  </div>
+ </div>
+</section>
+
+<section id="plans" class="plans">
+ <div class="container">
+  <div class="section-head"><h2>Choose Your Internet Plan</h2><p>Simple, transparent plans for home and business connectivity. GST may apply as applicable.</p></div>
+  <div class="plan-grid">
+   <div class="plan"><h3>100 Mbps</h3><div class="mbps">100 Mbps</div><div class="price">₹1,499 <small>/ 3 months</small></div><ul><li>High-speed fiber internet</li><li>Unlimited usage</li><li>Home & office ready</li><li>Customer support</li></ul><a class="btn btn-primary" href="https://wa.me/919315249487?text=I%20want%20100%20Mbps%20plan" target="_blank">Get This Plan</a></div>
+   <div class="plan popular"><div class="pop">POPULAR</div><h3>200 Mbps</h3><div class="mbps">200 Mbps</div><div class="price">₹2,499 <small>/ 6 months</small></div><ul><li>High-speed fiber internet</li><li>Unlimited usage</li><li>Streaming & work ready</li><li>Priority support</li></ul><a class="btn btn-primary" href="https://wa.me/919315249487?text=I%20want%20200%20Mbps%20plan" target="_blank">Get This Plan</a></div>
+   <div class="plan"><h3>300 Mbps</h3><div class="mbps">300 Mbps</div><div class="price">Custom <small>business pricing</small></div><ul><li>Business-grade connectivity</li><li>High bandwidth</li><li>Office & enterprise use</li><li>Dedicated support</li></ul><a class="btn btn-dark" href="https://wa.me/919315249487?text=I%20want%20300%20Mbps%20business%20plan" target="_blank">Get Quote</a></div>
+  </div>
+ </div>
+</section>
+
+<section id="services">
+ <div class="container">
+  <div class="section-head"><h2>Our Services</h2><p>Connectivity and technology solutions from one trusted local provider.</p></div>
+  <div class="services">
+   <div class="service"><div class="icon">🌐</div><h3>Fiber Internet</h3><p>Fast and stable broadband for home and office users.</p></div>
+   <div class="service"><div class="icon">🏢</div><h3>Business Broadband</h3><p>Reliable connectivity designed for business operations.</p></div>
+   <div class="service"><div class="icon">📡</div><h3>Lease Line</h3><p>Professional internet connectivity for critical business needs.</p></div>
+   <div class="service"><div class="icon">📹</div><h3>CCTV Solutions</h3><p>Full HD security camera solutions and installation support.</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="coverage" class="coverage">
+ <div class="container coverage-grid">
+  <div><h2>JMS FiberNet is growing near you.</h2><p>Check availability for your location and get connected with a local support team.</p><a class="btn btn-primary" href="https://wa.me/919315249487?text=Please%20check%20JMS%20FiberNet%20availability%20at%20my%20location." target="_blank">Check Availability</a></div>
+  <div><h3 style="margin-bottom:16px">Service Areas</h3><div class="areas"><span>Ghaziabad</span><span>Chipiyana Buzurg</span><span>Noida</span><span>Greater Noida</span><span>Nearby Areas</span></div></div>
+ </div>
+</section>
+
+<section id="about">
+ <div class="container about-grid">
+  <div><div class="badge">WHY JMS FIBERNET</div><h2 style="font-size:40px;color:#101828">Built for everyday speed and business reliability.</h2><p style="margin-top:15px">JMS FiberNet focuses on fast fiber connectivity, responsive customer support and practical internet solutions for homes, offices and businesses.</p><ul class="checks"><li>Fiber-based high-speed connectivity</li><li>Multiple speed options</li><li>Home and business solutions</li><li>Local customer support</li></ul></div>
+  <div class="about-box"><h3 style="font-size:24px;color:#101828">Need a new connection?</h3><p style="margin:10px 0 20px">Share your location and requirement. Our team can guide you about availability, plan and installation.</p><a class="btn btn-green" href="https://wa.me/919315249487?text=Hello%20JMS%20FiberNet%2C%20I%20need%20a%20new%20connection." target="_blank">Chat on WhatsApp</a></div>
+ </div>
+</section>
+
+<section id="contact" class="contact">
+ <div class="container">
+  <div class="section-head"><h2>Contact JMS FiberNet</h2><p>Ready to get connected? Contact us today.</p></div>
+  <div class="contact-grid">
+   <div class="contact-card"><h3>Talk to Us</h3><div class="contact-item">📞 <b>Phone:</b> +91 93152 49487</div><div class="contact-item">💬 <b>WhatsApp:</b> Available</div><div class="contact-item">🕘 <b>Support:</b> 9:00 AM – 8:00 PM</div></div>
+   <div class="contact-card"><h3>Customer Area</h3><p style="margin-bottom:18px">Customer login, online recharge, plan details and payment features can be connected here when your JMS FiberNet customer portal/app is ready.</p><a class="btn btn-dark" href="https://wa.me/919315249487?text=I%20need%20help%20with%20my%20JMS%20FiberNet%20connection." target="_blank">Customer Support</a></div>
+  </div>
+ </div>
+</section>
+</main>
+
+<a class="btn btn-green float" href="https://wa.me/919315249487?text=Hello%20JMS%20FiberNet%2C%20I%20want%20internet%20connection." target="_blank">💬 WhatsApp</a>
+
+<footer><div class="container footer"><div><strong>JMS FiberNet</strong><div>Fast • Reliable • Connected</div></div><div>© 2026 JMS FiberNet. All rights reserved.</div></div></footer>
+
+</body>
+</html>
